@@ -40,14 +40,32 @@ const geting = async (req, res) => {
     return res.status(500).json({ msg: error });
   }
 };
-// const get=async(req,res)=>{
+// const geted=async(req,res)=>{
 //     try {
-//         const 
+//         const  data=await Right.find({})
+//         console.log(data)
+//         return res.status(200).json(
+//             {
+//                 msg:data
+//             }
+//         )
 //     } catch (error) {
 //         return res.status(500).json({ msg: error });
 
         
 //     }
 // }
+const geted = async (req, res) => {
+    try {
+      const data = await Right.find({}).populate("userid");
+      console.log(data);
+      return res.status(200).json({
+        msg: data,
+      });
+    } catch (error) {
+      return res.status(500).json({ msg: error });
+    }
+  };
+  
 
-module.exports = { register, right, geting };
+module.exports = { register, right, geting,geted };
