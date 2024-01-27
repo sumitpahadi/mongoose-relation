@@ -40,5 +40,14 @@ const geting = async (req, res) => {
     return res.status(500).json({ msg: error });
   }
 };
+// const get=async(req,res)=>{
+//     try {
+//         const 
+//     } catch (error) {
+//         return res.status(500).json({ msg: error });
+
+        
+//     }
+// }
 
 module.exports = { register, right, geting };
